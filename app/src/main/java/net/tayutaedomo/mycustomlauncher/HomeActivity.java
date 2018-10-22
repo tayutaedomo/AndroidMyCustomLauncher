@@ -1,6 +1,7 @@
 package net.tayutaedomo.mycustomlauncher;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -105,7 +106,12 @@ public class HomeActivity extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        //findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+    }
+
+    public void showApps(View v) {
+        Intent i = new Intent(HomeActivity.this, AppsListActivity.class);
+        startActivity(i);
     }
 
     @Override
